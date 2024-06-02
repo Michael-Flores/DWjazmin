@@ -1,0 +1,70 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.cuerpo{
+    height: 300px;
+    width: 500px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid green;
+}
+.c1{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.c2{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+#principal{
+    width: 75%;
+    height: 100%;
+}
+#menu{
+    width: 25%;
+    height: 100%;
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    
+}
+#btn{
+    width: 10%;
+    height: 100%;
+}
+#btn button{
+    background-color: red;
+    color: aliceblue;
+    height: 100%;
+
+}
+#mensaje{
+    width: 90%;
+    height: 100%;
+    background-color: rgb(221, 177, 32);
+    text-align: center;
+}
+.botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px 30px 30px 30px;
+
+
+}
+.buton{
+    display: flex;
+    flex-direction: column;
+
+}
+.buton button {
+    width: 30px;
+    height: 30px;
+} 
