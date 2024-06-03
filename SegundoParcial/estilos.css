@@ -179,10 +179,10 @@ footer {
 }
 .info{
     height:  200px;
-    
+
      padding: 10px 10px 10px 10px;
      display: flex;
      flex-direction: column;
-     align-content: space-between;
+     align-content: space-around;
 }
 

@@ -52,6 +52,8 @@ function pregunta1(){
 
 
   function preguntas2(abrir,n){
+    var contenedor = document.getElementById("contenido");
+    contenedor.innerHTML="";
     var titulo=document.getElementById('titulo');
     var bt1=document.getElementById('bt1');
     var bt2=document.getElementById('bt2');
@@ -72,6 +74,28 @@ function pregunta1(){
  
   ajax.send();
 }
+
+function crearparrofo(){
+    var contenedor = document.getElementById("contenido");
+    
+    var col=document.getElementById('color').value;
+    var fondo=document.getElementById('fondo').value;
+    var text=document.getElementById('a').value;
+  var div=document.createElement('div');
+  div.style.width="300px";
+  div.style.height="30px";
+  div.style.backgroundColor=fondo;
+  div.style.textAlign="center";
+  var p=document.createElement('p');
+  p.innerHTML=text;
+  p.style.color=col;
+  div.appendChild(p);
+  var br=document.createElement('br');
+  contenedor.appendChild(div)
+  contenedor.appendChild(br)
+  
+}
+
 function pregunta3(abrir,n){
     var titulo=document.getElementById('titulo');
     var bt1=document.getElementById('bt1');
