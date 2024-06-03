@@ -158,6 +158,8 @@ function pregunta4(){
         var bt2=document.getElementById('bt2');
         bt1.style.display="block";
         bt2.style.display="block";
+        bt1.style.border="1px solid blue"
+        bt2.style.border="1px solid blue"
         bt1.textContent="listar";
         bt2.textContent="insertar";
         var sub=document.getElementById('sub-m');
