@@ -111,14 +111,17 @@ function pregunta4(){
   var cuer;
 
   cuer = document.getElementById('c');
-   var cuerpo=document.getElementById
+   var cuerpo=document.getElementById("cuerpo");
     var contenedor;
     contenedor = document.getElementById('principal');
     var ajax = new XMLHttpRequest() //crea el objetov ajax 
     ajax.open("get", 'listar.php', true);
     ajax.onreadystatechange = function () {
       if (ajax.readyState == 4) {
+
         contenedor.innerHTML = ajax.responseText;
+        cuerpo.style.height="auto";
+        cuerpo.style.width="auto";
        
       }
     }
