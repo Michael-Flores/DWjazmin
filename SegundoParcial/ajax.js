@@ -95,7 +95,11 @@ function crearparrofo(){
   contenedor.appendChild(br)
   
 }
-
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        crearparrofo();
+    }
+  });
 function pregunta3(abrir,n){
     var titulo=document.getElementById('titulo');
     var bt1=document.getElementById('bt1');
