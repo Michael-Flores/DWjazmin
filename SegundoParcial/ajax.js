@@ -150,6 +150,10 @@ function mostrarimagen(imagen,titulo,autor,anio,editorial)
 }
 
 function pregunta4(){
+    var titulo=document.getElementById('titulo');
+    titulo.innerHTML="Pregunta 4";
+    titulo.style.textAlign="center";
+        titulo.style.color="red";
     var bt1=document.getElementById('bt1');
         var bt2=document.getElementById('bt2');
         bt1.style.display="block";
@@ -159,5 +163,19 @@ function pregunta4(){
         var sub=document.getElementById('sub-m');
         sub.innerHTML="";
     }
-
+    function listar(abrir){
+        if(document.getElementById('bt1').textContent=='listar' && document.getElementById('bt2').textContent=='insertar'){
+        var contenido=document.getElementById('contenido');
+      var ajax = new XMLHttpRequest() 
+      ajax.open("get",abrir, true);
+      ajax.onreadystatechange = function () {
+        if (ajax.readyState == 4) {
+          contenido.innerHTML = ajax.responseText;
+  
+        }
+      }
+     
+      ajax.send();
+    }
+  }
   
