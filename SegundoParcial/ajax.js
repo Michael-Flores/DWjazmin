@@ -149,4 +149,15 @@ function mostrarimagen(imagen,titulo,autor,anio,editorial)
     
 }
 
+function pregunta4(){
+    var bt1=document.getElementById('bt1');
+        var bt2=document.getElementById('bt2');
+        bt1.style.display="block";
+        bt2.style.display="block";
+        bt1.textContent="listar";
+        bt2.textContent="insertar";
+        var sub=document.getElementById('sub-m');
+        sub.innerHTML="";
+    }
+
   
