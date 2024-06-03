@@ -106,13 +106,13 @@ function mostrarimagen(imagen,titulo,autor,anio,editorial)
      p1.innerHTML="titulo:"+titulo;
      div.appendChild(p1);
      var p2=document.createElement('p');
-     p2.innerHTML="titulo:"+autor;
+     p2.innerHTML="Autor:"+autor;
      div.appendChild(p2);
      var p3=document.createElement('p');
-     p3.innerHTML="titulo:"+anio;
+     p3.innerHTML="Año:"+anio;
      div.appendChild(p3);
      var p4=document.createElement('p');
-     p4.innerHTML="titulo:"+editorial;
+     p4.innerHTML="Editorial:"+editorial;
      div.appendChild(p4);
 
      principal.appendChild(div);
