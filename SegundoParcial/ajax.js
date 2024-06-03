@@ -77,12 +77,12 @@ function pregunta1(){
 
 function crearparrofo(){
     var contenedor = document.getElementById("contenido");
-    
+    contenedor.style.flexWrap = 'wrap';
     var col=document.getElementById('color').value;
     var fondo=document.getElementById('fondo').value;
     var text=document.getElementById('a').value;
   var div=document.createElement('div');
-  div.style.width="300px";
+  div.style.width="600px";
   div.style.height="30px";
   div.style.backgroundColor=fondo;
   div.style.textAlign="center";
