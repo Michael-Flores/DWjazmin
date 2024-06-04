@@ -33,7 +33,7 @@ function pregunta1(){
         var td = document.createElement("td");
         td.style.border="1px solid";
         td.style.width="150px";
-        td.style.height="10px";
+        td.style.height="10px";S
         td.contentEditable = true;
         td.addEventListener("keydown", function(event) {
           if (event.key === "Enter") {
@@ -167,17 +167,89 @@ function pregunta4(){
     }
     function listar(abrir){
         if(document.getElementById('bt1').textContent=='listar' && document.getElementById('bt2').textContent=='insertar'){
-        var contenido=document.getElementById('contenido');
-      var ajax = new XMLHttpRequest() 
-      ajax.open("get",abrir, true);
-      ajax.onreadystatechange = function () {
-        if (ajax.readyState == 4) {
-          contenido.innerHTML = ajax.responseText;
-  
-        }
-      }
-     
-      ajax.send();
+            var contenedor;
+            contenedor = document.getElementById('contenido');
+            var ajax = new XMLHttpRequest() //crea el objetov ajax 
+            ajax.open("get", abrir, true);
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState == 4) {
+                    var personas = JSON.parse(ajax.responseText);
+                    
+                           
+                            contenedor.innerHTML='';
+                            var ta=document.createElement('table');
+                                ta.style.border="1px solid"
+                                ta.className="tabla";
+                            var tr=document.createElement('tr');
+                            var nr=document.createElement('th');
+                            var fot=document.createElement('th');
+                            var nomb=document.createElement('th');
+                            var ape=document.createElement('th');
+                            var eda=document.createElement('th');
+                            var sex=document.createElement('th');
+                            
+                            nr.textContent="N°";
+                            fot.textContent="Imagen";
+                            nomb.textContent="Titulo";
+                            ape.textContent="Autor";
+                            eda.textContent="Editorial";
+                            sex.textContent="Año";
+                            
+                            tr.appendChild(nr);
+                            tr.appendChild(fot);
+                            tr.appendChild(nomb);
+                            tr.appendChild(ape);
+                            tr.appendChild(eda);
+                            tr.appendChild(sex);
+                          
+                            ta.appendChild(tr);
+                            
+        
+                            for (var i = 0; i < personas.length; i++) {
+                                
+                                var tr2=document.createElement('tr');
+                                   tr2.className="par";
+                                var nro=document.createElement('td');
+                                var foto=document.createElement('td');
+                                var img=document.createElement('img')
+                                var nombr=document.createElement('td');
+                                var apellid=document.createElement('td');
+                                var ed=document.createElement('td');
+                                var se=document.createElement('td');
+                                
+                                nro.textContent= i+1;
+                                img.src=`images/${personas[i].imagen}`;
+                                img.style.width="100px";
+                                img.style.height="100px";
+                                foto.appendChild(img);
+                                foto.style.border="1px solid"
+                                nombr.textContent=personas[i].titulo;
+                                nombr.style.border="1px solid"
+                                apellid.textContent=personas[i].autor;
+                                apellid.style.border="1px solid"
+                                ed.textContent=personas[i].editorial;
+                                ed.style.border="1px solid"
+                                se.textContent=personas[i].anio;
+                                se.style.border="1px solid"
+                                 
+                                tr2.appendChild(nro);
+                                tr2.appendChild(foto);
+                                tr2.appendChild(nombr);
+                                tr2.appendChild(apellid);
+                                tr2.appendChild(ed);
+                                tr2.appendChild(se);
+                               
+                                ta.appendChild(tr2);
+                           
+                            
+                                    
+                                }
+                            contenedor.appendChild(ta);
+        
+                }
+            }
+            ajax.setRequestHeader("Content-Type", "text/html; charset=utf-8");
+            ajax.send();
     }
   }
   

@@ -187,3 +187,12 @@ footer {
      align-content: space-around;
 }
 
+.tabla{
+    border: 1px solid;
+
+}
+.tabla tr th{
+    background-color: blue;
+    color: white;
+    border: 1px solid;
+}
