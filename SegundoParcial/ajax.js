@@ -33,7 +33,7 @@ function pregunta1(){
         var td = document.createElement("td");
         td.style.border="1px solid";
         td.style.width="150px";
-        td.style.height="10px";S
+        td.style.height="10px";
         td.contentEditable = true;
         td.addEventListener("keydown", function(event) {
           if (event.key === "Enter") {
