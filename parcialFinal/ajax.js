@@ -25,3 +25,38 @@ function CambiarFondo(){
     var cambiar=document.getElementById(`${menus}`);
     cambiar.style.backgroundColor=`${color}`
 }
+
+function pregunta3(){
+    var submenu=document.getElementById('sub-menu');
+  var ajax = new XMLHttpRequest() 
+  ajax.open("get", 'selecionarMateria.php', true);
+  ajax.onreadystatechange = function () {
+    if (ajax.readyState == 4) {
+      submenu.innerHTML = ajax.responseText;
+
+    }
+  }
+ 
+  ajax.send();
+}
+function CambiarFondo(){
+    var color=document.getElementById("color").value;
+    var menus=document.getElementById("menus").value;
+    var cambiar=document.getElementById(`${menus}`);
+    cambiar.style.backgroundColor=`${color}`
+}
+
+function horarios(){
+    var contenido=document.getElementById('contenido');
+    var materia=document.getElementById('materia').value;
+  var ajax = new XMLHttpRequest() 
+  ajax.open("get", 'horario.php', true);
+  ajax.onreadystatechange = function () {
+    if (ajax.readyState == 4) {
+      contenido.innerHTML = ajax.responseText;
+
+    }
+  }
+ 
+  ajax.send();
+}
