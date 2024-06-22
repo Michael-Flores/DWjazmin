@@ -1,6 +1,6 @@
 <?php
 include("conexion.php");
-$materia=$_POST['materia'];
+
  $sql = "SELECT id,materia,nombres_apellidos,calificacion FROM alumnos "; 
 $result = $con->query($sql);
 
@@ -14,14 +14,14 @@ if ($result->num_rows > 0) {
         </tr>
         <?php
         while ($row = $result->fetch_assoc()) {
-            if($row['materia']==$materia){
+          
         ?>
             <tr>
                 <td><?php echo $row['id']; ?></td>
                 <td><?php echo $row["nombres_apellidos"]; ?></td>
-                <td><input type="number" value="<?php echo $row["calificacion"]; ?>" style="width:50px;"></td>
+                <td><input id ="<?php echo $row['id']?>" type="number" value="<?php echo $row["calificacion"]; ?>" style="width:50px;" onchange="actualizar(<?php echo $row['id']?>)"></td>
             </tr>
-        <?php } }?>
+        <?php }?>
     </table>
 <?php
 } else {

@@ -62,29 +62,27 @@ function horarios(){
 }
 
 function pregunta4(){
-    var opcion = document.getElementById('sub-menu');
+    var contenido = document.getElementById("contenido");
     var ajax = new XMLHttpRequest();
-    ajax.open("GET", "pregunta.html", true);
+    ajax.open("GET", "listado.php", true);
     ajax.onreadystatechange = function(){
         if(ajax.readyState == 4){
-            opcion.innerHTML = ajax.responseText;
+            contenido.innerHTML = ajax.responseText;
         }
     }
     ajax.setRequestHeader("Content-Type", "application/json");
     ajax.send();
 }
-
-function buscar(){
-    var ajax = new XMLHttpRequest();
+function actualizar(id){
     var contenido = document.getElementById("contenido");
-    var formulario = document.getElementById("formulario");
-    var parametros = new FormData(formulario);
-    ajax.open("POST", "listado.php", true);
-
+    var d=document.getElementById(`${id}`).value;
+    var ajax = new XMLHttpRequest();
+    ajax.open("GET", "actualizar.php?id="+ id +"&cal="+d, true);
     ajax.onreadystatechange = function(){
-        if(ajax.readyState == 4 && ajax.status == 200){
+        if(ajax.readyState == 4){
             contenido.innerHTML = ajax.responseText;
         }
     }
-    ajax.send(parametros);
+    ajax.setRequestHeader("Content-Type", "application/json");
+    ajax.send();
 }
