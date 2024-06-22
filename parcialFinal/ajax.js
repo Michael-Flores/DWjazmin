@@ -5,7 +5,7 @@ function pregunta1(){
      contador.style.width="220px";
      contador.style.height="100%";
      contador.style.backgroundColor="yellow"
-    aumento+=`<select name="menus" id="menus" onchange="CambiarFondo">
+    aumento=`<select name="menus" id="menus" onchange="CambiarFondo()">
     <option value="titulo"> Titulo</option>
     <option value="menu">Menu</option>
     <option value="sub-menu">Sub-menu</option>
@@ -14,6 +14,12 @@ function pregunta1(){
     <option value="contador">Contador</option>
 </select>
  <input type="color" id="color">`;
- pie+=aumento;
+ pie.innerHTML+=aumento;
 
+}
+function CambiarFondo(){
+    var color=document.getElementById("color").value;
+    var menus=document.getElementById("menus").value;
+    var cambiar=document.getElementById(`${menus}`);
+    cambiar.style.backgroundColor=`${color}`
 }
