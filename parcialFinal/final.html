@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href=".\estilos.css">
+    <script src="ajax.js"></script>
     <title>Segundo Parcial SIS 256</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
             
             <div class="cbd-superior">
                 <div class="btn-preguntas">
-                    <button id="btn-pregunta1" class="btn-pregunta" >Pregunta 1</button>
+                    <button id="btn-pregunta1" class="btn-pregunta"  onclick="pregunta1()">Pregunta 1</button>
                     <div class="lineas-verticales"></div>
                     <button id="btn-pregunta2" class="btn-pregunta">Pregunta 2</button>
                     <div class="lineas-verticales"></div>
@@ -56,15 +57,20 @@
                         
                 </div>
             </div>
-            <div class="cabecera-izquierda">
-                <img src=".\images\escudo.jpg" alt="Escudo universidad san francisco xavier" width="150px">
-            </div>
+            
         </div>
         
         
     </main>
-   
-    <footer id="pie"> Sucre - Semestre 1-2024</footer>
+     <div class="pie-inferior">
+        <div id="contador"></div>
+        <div class="cont-pie">
+          <footer id="pie"> Sucre - Semestre 1-2024</footer>
+        </div>
+        <div class="cabecera-izquierda">
+           <img src=".\images\escudo.jpg" alt="Escudo universidad san francisco xavier" width="150px">
+        </div>
+     </div>
     
 </body>
 </html>
