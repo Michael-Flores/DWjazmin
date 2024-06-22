@@ -3,7 +3,7 @@ include("conexion.php");
 $sql="SELECT DISTINCT materia FROM horarios";
 $resultado=$con->query($sql);
 ?>
-<select name="materia" id="materia">
+<select name="materia" id="materia" onchange="horarios()">
   <?php
   while ($row=$resultado->fetch_assoc()) {
     ?>

@@ -50,7 +50,7 @@ function horarios(){
     var contenido=document.getElementById('contenido');
     var materia=document.getElementById('materia').value;
   var ajax = new XMLHttpRequest() 
-  ajax.open("get", 'horario.php', true);
+  ajax.open("get", 'horario.php?materia='+materia, true);
   ajax.onreadystatechange = function () {
     if (ajax.readyState == 4) {
       contenido.innerHTML = ajax.responseText;
@@ -59,4 +59,32 @@ function horarios(){
   }
  
   ajax.send();
+}
+
+function pregunta4(){
+    var opcion = document.getElementById('sub-menu');
+    var ajax = new XMLHttpRequest();
+    ajax.open("GET", "pregunta.html", true);
+    ajax.onreadystatechange = function(){
+        if(ajax.readyState == 4){
+            opcion.innerHTML = ajax.responseText;
+        }
+    }
+    ajax.setRequestHeader("Content-Type", "application/json");
+    ajax.send();
+}
+
+function buscar(){
+    var ajax = new XMLHttpRequest();
+    var contenido = document.getElementById("contenido");
+    var formulario = document.getElementById("formulario");
+    var parametros = new FormData(formulario);
+    ajax.open("POST", "listado.php", true);
+
+    ajax.onreadystatechange = function(){
+        if(ajax.readyState == 4 && ajax.status == 200){
+            contenido.innerHTML = ajax.responseText;
+        }
+    }
+    ajax.send(parametros);
 }
