@@ -1,0 +1,31 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+}
+.principal{
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    height: 500px;
+}
+.cabeza{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.medio{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.b{
+    width: 190px;
+    height: 30px;
+    text-align: left;
+    background-color: white;
+}
+.cuerpo{
+    border: 1px solid;
+    height: 300px;
+}
